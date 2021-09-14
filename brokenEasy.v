@@ -1,14 +1,10 @@
 //----------------------------------------------------------------------
 module Breadboard	(w,x,y,z,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10); //Module Header
-input w,x,y,z;                        //Specify inputs
+input w,x,y,z;                                             //Specify inputs
 output r1,r2,r3,r4,r5,r6,r7,r8,r9,r10;                        //Specify outputs
 reg r1, r2, r3,r4,r5,r6,r7,r8,r9,r10;                           //Output is a memory area.
 
-always @ ( w,x,y,z,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10) begin      //Create a set of code that works line by line 
-                                      // if the variables are used
-
-//x+y'z                               //Comment for the formula
-//r1= (x)|((!y)&z);   
+always @ ( w,x,y,z,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10) begin      //Create a set of code that works line by line
 
 r1= ((!w)&(!x)&y&z) | ((!w)&x&y&(!z)) | ((!w)&x&y&z) | (w&(!x)&(!y)&z) | (w&(!x)&y&z) | (w&x&(!y)&(!z)) | (w&x&(!y)&z) | (w&x&y&(!z)) | (w&x&y&z);              //Bitwise operation of the formula
 r2= ((!w)&(!x)&y&z)|((!w)&x&(!y)&z)|((!w)&x&y&z)|(w&(!x)&y&z)|(w&x&(!y)&(!z))|(w&x&(!y)&z)|(w&x&y&(!z))|(w&x&y&z);
@@ -29,7 +25,6 @@ endmodule                             //Module End
 
 module testbench();
 
-  //Registers act like local variables
   reg [4:0] i; //A loop control for 16 rows of a truth table.
   reg  a;//Value of 2^3
   reg  b;//Value of 2^2
@@ -56,17 +51,16 @@ module testbench();
 		c=(i/2)%2;
 		d=(i/1)%2;//Low bit	
 		 
-		//Oh, Dr. Becker, do you remember what belongs here? 
 		#60;
 		 	
 		$display ("|%2d|%1d|%1d|%1d|%1d| %1d| %1d| %1d| %1d| %1d| %1d| %1d| %1d| %1d| %1d|",i,a,b,c,d,f0,f1,f2,f3,f4,f5,f6,f7,f8,f9);
-		if(i%4==3) //Every fourth row of the table, put in a marker for easier reading.
+		if(i%4==3) 
 		 $display ("|--+-+-+-+-+--+--+--+--+--+--+--+--+--+--|");//Only one line, does not need a code block
 
 	end//End of the for loop code block
  
-	#10; //A time dealy of 10 time units. Hashtag Delay
-	$finish;//A command, not unlike System.exit(0) in Java.
+	#10; //A time dealy of 10 time unit
+	$finish;
   end  //End the code block of the main (initial)
   
 endmodule //Close the testbench module
