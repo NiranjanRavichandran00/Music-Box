@@ -73,22 +73,22 @@ module ADD_SUB(A,B,M,S,C,V);
 	wire c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16; // Wires to hold carry.
 	
 	// XOR each bit of inputB and mode.
-    assign b0 = B[0] ^ M;
-    assign b1 = B[1] ^ M;
-    assign b2 = B[2] ^ M;
-    assign b3 = B[3] ^ M;
+	assign b0 = B[0] ^ M;
+	assign b1 = B[1] ^ M;
+	assign b2 = B[2] ^ M;
+	assign b3 = B[3] ^ M;
 	assign b4 = B[4] ^ M;
-    assign b5 = B[5] ^ M;
-    assign b6 = B[6] ^ M;
-    assign b7 = B[7] ^ M;
+	assign b5 = B[5] ^ M;
+	assign b6 = B[6] ^ M;
+	assign b7 = B[7] ^ M;
 	assign b8 = B[8] ^ M;
-    assign b9 = B[9] ^ M;
-    assign b10 = B[10] ^ M;
-    assign b11 = B[11] ^ M;
+	assign b9 = B[9] ^ M;
+	assign b10 = B[10] ^ M;
+	assign b11 = B[11] ^ M;
 	assign b12 = B[12] ^ M;
-    assign b13 = B[13] ^ M;
-    assign b14 = B[14] ^ M;
-    assign b15 = B[15] ^ M;
+	assign b13 = B[13] ^ M;
+	assign b14 = B[14] ^ M;
+	assign b15 = B[15] ^ M;
 
 	// Use FullAdder to calculate the sum.
 	FullAdder FA0(A[0],b0,M,c1,S[0]);
@@ -162,39 +162,39 @@ module MULTIPLIER(A, B, P);
 	// Assign AND of inputB and inputA[0] to b0.
 	// Shift and assign 0 to b0[15].
 	assign b0[0] = B[1] & A[0];
-    assign b0[1] = B[2] & A[0];
-    assign b0[2] = B[3] & A[0];
-    assign b0[3] = B[4] & A[0];
-    assign b0[4] = B[5] & A[0];
-    assign b0[5] = B[6] & A[0];
-    assign b0[6] = B[7] & A[0];
-    assign b0[7] = B[8] & A[0];
-    assign b0[8] = B[9] & A[0];
-    assign b0[9] = B[10] & A[0];
-    assign b0[10] = B[11] & A[0];
-    assign b0[11] = B[12] & A[0];
-    assign b0[12] = B[13] & A[0];
-    assign b0[13] = B[14] & A[0];
-    assign b0[14] = B[15] & A[0];
-    assign b0[15] = 1'b0;
+	assign b0[1] = B[2] & A[0];
+	assign b0[2] = B[3] & A[0];
+	assign b0[3] = B[4] & A[0];
+	assign b0[4] = B[5] & A[0];
+	assign b0[5] = B[6] & A[0];
+	assign b0[6] = B[7] & A[0];
+	assign b0[7] = B[8] & A[0];
+	assign b0[8] = B[9] & A[0];
+	assign b0[9] = B[10] & A[0];
+	assign b0[10] = B[11] & A[0];
+	assign b0[11] = B[12] & A[0];
+	assign b0[12] = B[13] & A[0];
+	assign b0[13] = B[14] & A[0];
+	assign b0[14] = B[15] & A[0];
+	assign b0[15] = 1'b0;
 	
 	// Assign AND of inputB and inputA[1] to b1
 	assign b1[0] = B[0] & A[1];
-    assign b1[1] = B[1] & A[1];
-    assign b1[2] = B[2] & A[1];
-    assign b1[3] = B[3] & A[1];
-    assign b1[4] = B[4] & A[1];
-    assign b1[5] = B[5] & A[1];
-    assign b1[6] = B[6] & A[1];
-    assign b1[7] = B[7] & A[1];
-    assign b1[8] = B[8] & A[1];
-    assign b1[9] = B[9] & A[1];
-    assign b1[10] = B[10] & A[1];
-    assign b1[11] = B[11] & A[1];
-    assign b1[12] = B[12] & A[1];
-    assign b1[13] = B[13] & A[1];
-    assign b1[14] = B[14] & A[1];
-    assign b1[15] = B[15] & A[1];
+	assign b1[1] = B[1] & A[1];
+	assign b1[2] = B[2] & A[1];
+	assign b1[3] = B[3] & A[1];
+	assign b1[4] = B[4] & A[1];
+	assign b1[5] = B[5] & A[1];
+	assign b1[6] = B[6] & A[1];
+	assign b1[7] = B[7] & A[1];
+	assign b1[8] = B[8] & A[1];
+	assign b1[9] = B[9] & A[1];
+	assign b1[10] = B[10] & A[1];
+	assign b1[11] = B[11] & A[1];
+	assign b1[12] = B[12] & A[1];
+	assign b1[13] = B[13] & A[1];
+	assign b1[14] = B[14] & A[1];
+	assign b1[15] = B[15] & A[1];
     
 	// Assign the sum of b0 and b1 to s0.
 	// c0 holds the carry.
@@ -226,22 +226,22 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[2] to b2.
 	assign b2[0] = B[0] & A[2];
-    assign b2[1] = B[1] & A[2];
-    assign b2[2] = B[2] & A[2];
-    assign b2[3] = B[3] & A[2];
-    assign b2[4] = B[4] & A[2];
-    assign b2[5] = B[5] & A[2];
-    assign b2[6] = B[6] & A[2];
-    assign b2[7] = B[7] & A[2];
-    assign b2[8] = B[8] & A[2];
-    assign b2[9] = B[9] & A[2];
-    assign b2[10] = B[10] & A[2];
-    assign b2[11] = B[11] & A[2];
-    assign b2[12] = B[12] & A[2];
-    assign b2[13] = B[13] & A[2];
-    assign b2[14] = B[14] & A[2];
-    assign b2[15] = B[15] & A[2];
-    
+	assign b2[1] = B[1] & A[2];
+	assign b2[2] = B[2] & A[2];
+	assign b2[3] = B[3] & A[2];
+	assign b2[4] = B[4] & A[2];
+	assign b2[5] = B[5] & A[2];
+	assign b2[6] = B[6] & A[2];
+	assign b2[7] = B[7] & A[2];
+	assign b2[8] = B[8] & A[2];
+	assign b2[9] = B[9] & A[2];
+	assign b2[10] = B[10] & A[2];
+	assign b2[11] = B[11] & A[2];
+	assign b2[12] = B[12] & A[2];
+	assign b2[13] = B[13] & A[2];
+	assign b2[14] = B[14] & A[2];
+	assign b2[15] = B[15] & A[2];
+
 	// Assign the sum of w0 and b2 to s1.
 	// c1 holds the carry.
 	ADD_SUB AS2(w0,b2,1'b0,s1,c1,overflow);
@@ -272,21 +272,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[3] to b3.
 	assign b3[0] = B[0] & A[3];
-    assign b3[1] = B[1] & A[3];
-    assign b3[2] = B[2] & A[3];
-    assign b3[3] = B[3] & A[3];
-    assign b3[4] = B[4] & A[3];
-    assign b3[5] = B[5] & A[3];
-    assign b3[6] = B[6] & A[3];
-    assign b3[7] = B[7] & A[3];
-    assign b3[8] = B[8] & A[3];
-    assign b3[9] = B[9] & A[3];
-    assign b3[10] = B[10] & A[3];
-    assign b3[11] = B[11] & A[3];
-    assign b3[12] = B[12] & A[3];
-    assign b3[13] = B[13] & A[3];
-    assign b3[14] = B[14] & A[3];
-    assign b3[15] = B[15] & A[3];
+	assign b3[1] = B[1] & A[3];
+	assign b3[2] = B[2] & A[3];
+	assign b3[3] = B[3] & A[3];
+	assign b3[4] = B[4] & A[3];
+	assign b3[5] = B[5] & A[3];
+	assign b3[6] = B[6] & A[3];
+	assign b3[7] = B[7] & A[3];
+	assign b3[8] = B[8] & A[3];
+	assign b3[9] = B[9] & A[3];
+	assign b3[10] = B[10] & A[3];
+	assign b3[11] = B[11] & A[3];
+	assign b3[12] = B[12] & A[3];
+	assign b3[13] = B[13] & A[3];
+	assign b3[14] = B[14] & A[3];
+	assign b3[15] = B[15] & A[3];
     
 	// Assign the sum of w1 and b3 to s2.
 	// c2 holds the carry.
@@ -317,22 +317,22 @@ module MULTIPLIER(A, B, P);
 	assign w2[15] = c2;
 	
 	// Assign AND of inputB and inputA[4] to b4.
-    assign b4[0] = B[0] & A[4];
-    assign b4[1] = B[1] & A[4];
-    assign b4[2] = B[2] & A[4];
-    assign b4[3] = B[3] & A[4];
-    assign b4[4] = B[4] & A[4];
-    assign b4[5] = B[5] & A[4];
-    assign b4[6] = B[6] & A[4];
-    assign b4[7] = B[7] & A[4];
-    assign b4[8] = B[8] & A[4];
-    assign b4[9] = B[9] & A[4];
-    assign b4[10] = B[10] & A[4];
-    assign b4[11] = B[11] & A[4];
-    assign b4[12] = B[12] & A[4];
-    assign b4[13] = B[13] & A[4];
-    assign b4[14] = B[14] & A[4];
-    assign b4[15] = B[15] & A[4];
+	assign b4[0] = B[0] & A[4];
+	assign b4[1] = B[1] & A[4];
+	assign b4[2] = B[2] & A[4];
+	assign b4[3] = B[3] & A[4];
+	assign b4[4] = B[4] & A[4];
+	assign b4[5] = B[5] & A[4];
+	assign b4[6] = B[6] & A[4];
+	assign b4[7] = B[7] & A[4];
+	assign b4[8] = B[8] & A[4];
+	assign b4[9] = B[9] & A[4];
+	assign b4[10] = B[10] & A[4];
+	assign b4[11] = B[11] & A[4];
+	assign b4[12] = B[12] & A[4];
+	assign b4[13] = B[13] & A[4];
+	assign b4[14] = B[14] & A[4];
+	assign b4[15] = B[15] & A[4];
     
 	// Assign the sum of w2 and b4 to s3.
 	// c3 holds the carry.
@@ -364,21 +364,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[5] to b5.
 	assign b5[0] = B[0] & A[5];
-    assign b5[1] = B[1] & A[5];
-    assign b5[2] = B[2] & A[5];
-    assign b5[3] = B[3] & A[5];
-    assign b5[4] = B[4] & A[5];
-    assign b5[5] = B[5] & A[5];
-    assign b5[6] = B[6] & A[5];
-    assign b5[7] = B[7] & A[5];
-    assign b5[8] = B[8] & A[5];
-    assign b5[9] = B[9] & A[5];
-    assign b5[10] = B[10] & A[5];
-    assign b5[11] = B[11] & A[5];
-    assign b5[12] = B[12] & A[5];
-    assign b5[13] = B[13] & A[5];
-    assign b5[14] = B[14] & A[5];
-    assign b5[15] = B[15] & A[5];
+	assign b5[1] = B[1] & A[5];
+	assign b5[2] = B[2] & A[5];
+	assign b5[3] = B[3] & A[5];
+	assign b5[4] = B[4] & A[5];
+	assign b5[5] = B[5] & A[5];
+	assign b5[6] = B[6] & A[5];
+	assign b5[7] = B[7] & A[5];
+	assign b5[8] = B[8] & A[5];
+	assign b5[9] = B[9] & A[5];
+	assign b5[10] = B[10] & A[5];
+	assign b5[11] = B[11] & A[5];
+	assign b5[12] = B[12] & A[5];
+	assign b5[13] = B[13] & A[5];
+	assign b5[14] = B[14] & A[5];
+	assign b5[15] = B[15] & A[5];
 	
 	// Assign the sum of w3 and b5 to s4.
 	// c4 holds the carry.
@@ -410,21 +410,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[6] to b6.
 	assign b6[0] = B[0] & A[6];
-    assign b6[1] = B[1] & A[6];
-    assign b6[2] = B[2] & A[6];
-    assign b6[3] = B[3] & A[6];
-    assign b6[4] = B[4] & A[6];
-    assign b6[5] = B[5] & A[6];
-    assign b6[6] = B[6] & A[6];
-    assign b6[7] = B[7] & A[6];
-    assign b6[8] = B[8] & A[6];
-    assign b6[9] = B[9] & A[6];
-    assign b6[10] = B[10] & A[6];
-    assign b6[11] = B[11] & A[6];
-    assign b6[12] = B[12] & A[6];
-    assign b6[13] = B[13] & A[6];
-    assign b6[14] = B[14] & A[6];
-    assign b6[15] = B[15] & A[6];
+	assign b6[1] = B[1] & A[6];
+	assign b6[2] = B[2] & A[6];
+	assign b6[3] = B[3] & A[6];
+	assign b6[4] = B[4] & A[6];
+	assign b6[5] = B[5] & A[6];
+	assign b6[6] = B[6] & A[6];
+	assign b6[7] = B[7] & A[6];
+	assign b6[8] = B[8] & A[6];
+	assign b6[9] = B[9] & A[6];
+	assign b6[10] = B[10] & A[6];
+	assign b6[11] = B[11] & A[6];
+	assign b6[12] = B[12] & A[6];
+	assign b6[13] = B[13] & A[6];
+	assign b6[14] = B[14] & A[6];
+	assign b6[15] = B[15] & A[6];
 
 	// Assign the sum of w4 and b6 to s5.
 	// c5 holds the carry.
@@ -456,21 +456,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[7] to b7.
 	assign b7[0] = B[0] & A[7];
-    assign b7[1] = B[1] & A[7];
-    assign b7[2] = B[2] & A[7];
-    assign b7[3] = B[3] & A[7];
-    assign b7[4] = B[4] & A[7];
-    assign b7[5] = B[5] & A[7];
-    assign b7[6] = B[6] & A[7];
-    assign b7[7] = B[7] & A[7];
-    assign b7[8] = B[8] & A[7];
-    assign b7[9] = B[9] & A[7];
-    assign b7[10] = B[10] & A[7];
-    assign b7[11] = B[11] & A[7];
-    assign b7[12] = B[12] & A[7];
-    assign b7[13] = B[13] & A[7];
-    assign b7[14] = B[14] & A[7];
-    assign b7[15] = B[15] & A[7];
+	assign b7[1] = B[1] & A[7];
+	assign b7[2] = B[2] & A[7];
+	assign b7[3] = B[3] & A[7];
+	assign b7[4] = B[4] & A[7];
+	assign b7[5] = B[5] & A[7];
+	assign b7[6] = B[6] & A[7];
+	assign b7[7] = B[7] & A[7];
+	assign b7[8] = B[8] & A[7];
+	assign b7[9] = B[9] & A[7];
+	assign b7[10] = B[10] & A[7];
+	assign b7[11] = B[11] & A[7];
+	assign b7[12] = B[12] & A[7];
+	assign b7[13] = B[13] & A[7];
+	assign b7[14] = B[14] & A[7];
+	assign b7[15] = B[15] & A[7];
 
 	// Assign the sum of w5 and b7 to s6.
 	// c6 holds the carry.
@@ -502,21 +502,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[8] to b8.
 	assign b8[0] = B[0] & A[8];
-    assign b8[1] = B[1] & A[8];
-    assign b8[2] = B[2] & A[8];
-    assign b8[3] = B[3] & A[8];
-    assign b8[4] = B[4] & A[8];
-    assign b8[5] = B[5] & A[8];
-    assign b8[6] = B[6] & A[8];
-    assign b8[7] = B[7] & A[8];
-    assign b8[8] = B[8] & A[8];
-    assign b8[9] = B[9] & A[8];
-    assign b8[10] = B[10] & A[8];
-    assign b8[11] = B[11] & A[8];
-    assign b8[12] = B[12] & A[8];
-    assign b8[13] = B[13] & A[8];
-    assign b8[14] = B[14] & A[8];
-    assign b8[15] = B[15] & A[8];
+	assign b8[1] = B[1] & A[8];
+	assign b8[2] = B[2] & A[8];
+	assign b8[3] = B[3] & A[8];
+	assign b8[4] = B[4] & A[8];
+	assign b8[5] = B[5] & A[8];
+	assign b8[6] = B[6] & A[8];
+	assign b8[7] = B[7] & A[8];
+	assign b8[8] = B[8] & A[8];
+	assign b8[9] = B[9] & A[8];
+	assign b8[10] = B[10] & A[8];
+	assign b8[11] = B[11] & A[8];
+	assign b8[12] = B[12] & A[8];
+	assign b8[13] = B[13] & A[8];
+	assign b8[14] = B[14] & A[8];
+	assign b8[15] = B[15] & A[8];
     
 	// Assign the sum of w6 and b8 to s7.
 	// c7 holds the carry.
@@ -548,21 +548,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[9] to b9.
 	assign b9[0] = B[0] & A[9];
-    assign b9[1] = B[1] & A[9];
-    assign b9[2] = B[2] & A[9];
-    assign b9[3] = B[3] & A[9];
-    assign b9[4] = B[4] & A[9];
-    assign b9[5] = B[5] & A[9];
-    assign b9[6] = B[6] & A[9];
-    assign b9[7] = B[7] & A[9];
-    assign b9[8] = B[8] & A[9];
-    assign b9[9] = B[9] & A[9];
-    assign b9[10] = B[10] & A[9];
-    assign b9[11] = B[11] & A[9];
-    assign b9[12] = B[12] & A[9];
-    assign b9[13] = B[13] & A[9];
-    assign b9[14] = B[14] & A[9];
-    assign b9[15] = B[15] & A[9];
+	assign b9[1] = B[1] & A[9];
+	assign b9[2] = B[2] & A[9];
+	assign b9[3] = B[3] & A[9];
+	assign b9[4] = B[4] & A[9];
+	assign b9[5] = B[5] & A[9];
+	assign b9[6] = B[6] & A[9];
+	assign b9[7] = B[7] & A[9];
+	assign b9[8] = B[8] & A[9];
+	assign b9[9] = B[9] & A[9];
+	assign b9[10] = B[10] & A[9];
+	assign b9[11] = B[11] & A[9];
+	assign b9[12] = B[12] & A[9];
+	assign b9[13] = B[13] & A[9];
+	assign b9[14] = B[14] & A[9];
+	assign b9[15] = B[15] & A[9];
 
 	// Assign the sum of w7 and b9 to s8.
 	// c8 holds the carry.
@@ -593,22 +593,22 @@ module MULTIPLIER(A, B, P);
 	assign w8[15] = c8;
 	
 	// Assign AND of inputB and inputA[10] to b10.
-    assign b10[0] = B[0] & A[10];
-    assign b10[1] = B[1] & A[10];
-    assign b10[2] = B[2] & A[10];
-    assign b10[3] = B[3] & A[10];
-    assign b10[4] = B[4] & A[10];
-    assign b10[5] = B[5] & A[10];
-    assign b10[6] = B[6] & A[10];
-    assign b10[7] = B[7] & A[10];
-    assign b10[8] = B[8] & A[10];
-    assign b10[9] = B[9] & A[10];
-    assign b10[10] = B[10] & A[10];
-    assign b10[11] = B[11] & A[10];
-    assign b10[12] = B[12] & A[10];
-    assign b10[13] = B[13] & A[10];
-    assign b10[14] = B[14] & A[10];
-    assign b10[15] = B[15] & A[10];
+	assign b10[0] = B[0] & A[10];
+	assign b10[1] = B[1] & A[10];
+	assign b10[2] = B[2] & A[10];
+	assign b10[3] = B[3] & A[10];
+	assign b10[4] = B[4] & A[10];
+	assign b10[5] = B[5] & A[10];
+	assign b10[6] = B[6] & A[10];
+	assign b10[7] = B[7] & A[10];
+	assign b10[8] = B[8] & A[10];
+	assign b10[9] = B[9] & A[10];
+	assign b10[10] = B[10] & A[10];
+	assign b10[11] = B[11] & A[10];
+	assign b10[12] = B[12] & A[10];
+	assign b10[13] = B[13] & A[10];
+	assign b10[14] = B[14] & A[10];
+	assign b10[15] = B[15] & A[10];
     
 	// Assign the sum of w8 and b10 to s9.
 	// c9 holds the carry.
@@ -641,21 +641,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[11] to b11.
 	assign b11[0] = B[0] & A[11];
-    assign b11[1] = B[1] & A[11];
-    assign b11[2] = B[2] & A[11];
-    assign b11[3] = B[3] & A[11];
-    assign b11[4] = B[4] & A[11];
-    assign b11[5] = B[5] & A[11];
-    assign b11[6] = B[6] & A[11];
-    assign b11[7] = B[7] & A[11];
-    assign b11[8] = B[8] & A[11];
-    assign b11[9] = B[9] & A[11];
-    assign b11[10] = B[10] & A[11];
-    assign b11[11] = B[11] & A[11];
-    assign b11[12] = B[12] & A[11];
-    assign b11[13] = B[13] & A[11];
-    assign b11[14] = B[14] & A[11];
-    assign b11[15] = B[15] & A[11];
+	assign b11[1] = B[1] & A[11];
+	assign b11[2] = B[2] & A[11];
+	assign b11[3] = B[3] & A[11];
+	assign b11[4] = B[4] & A[11];
+	assign b11[5] = B[5] & A[11];
+	assign b11[6] = B[6] & A[11];
+	assign b11[7] = B[7] & A[11];
+	assign b11[8] = B[8] & A[11];
+	assign b11[9] = B[9] & A[11];
+	assign b11[10] = B[10] & A[11];
+	assign b11[11] = B[11] & A[11];
+	assign b11[12] = B[12] & A[11];
+	assign b11[13] = B[13] & A[11];
+	assign b11[14] = B[14] & A[11];
+	assign b11[15] = B[15] & A[11];
 
 	// Assign the sum of w9 and b11 to s10.
 	// c10 holds the carry.
@@ -687,21 +687,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[12] to b12.
 	assign b12[0] = B[0] & A[12];
-    assign b12[1] = B[1] & A[12];
-    assign b12[2] = B[2] & A[12];
-    assign b12[3] = B[3] & A[12];
-    assign b12[4] = B[4] & A[12];
-    assign b12[5] = B[5] & A[12];
-    assign b12[6] = B[6] & A[12];
-    assign b12[7] = B[7] & A[12];
-    assign b12[8] = B[8] & A[12];
-    assign b12[9] = B[9] & A[12];
-    assign b12[10] = B[10] & A[12];
-    assign b12[11] = B[11] & A[12];
-    assign b12[12] = B[12] & A[12];
-    assign b12[13] = B[13] & A[12];
-    assign b12[14] = B[14] & A[12];
-    assign b12[15] = B[15] & A[12];
+	assign b12[1] = B[1] & A[12];
+	assign b12[2] = B[2] & A[12];
+	assign b12[3] = B[3] & A[12];
+	assign b12[4] = B[4] & A[12];
+	assign b12[5] = B[5] & A[12];
+	assign b12[6] = B[6] & A[12];
+	assign b12[7] = B[7] & A[12];
+	assign b12[8] = B[8] & A[12];
+	assign b12[9] = B[9] & A[12];
+	assign b12[10] = B[10] & A[12];
+	assign b12[11] = B[11] & A[12];
+	assign b12[12] = B[12] & A[12];
+	assign b12[13] = B[13] & A[12];
+	assign b12[14] = B[14] & A[12];
+	assign b12[15] = B[15] & A[12];
 
 	// Assign the sum of w10 and b12 to s11.
 	// c11 holds the carry.
@@ -733,21 +733,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[13] to b13.
 	assign b13[0] = B[0] & A[13];
-    assign b13[1] = B[1] & A[13];
-    assign b13[2] = B[2] & A[13];
-    assign b13[3] = B[3] & A[13];
-    assign b13[4] = B[4] & A[13];
-    assign b13[5] = B[5] & A[13];
-    assign b13[6] = B[6] & A[13];
-    assign b13[7] = B[7] & A[13];
-    assign b13[8] = B[8] & A[13];
-    assign b13[9] = B[9] & A[13];
-    assign b13[10] = B[10] & A[13];
-    assign b13[11] = B[11] & A[13];
-    assign b13[12] = B[12] & A[13];
-    assign b13[13] = B[13] & A[13];
-    assign b13[14] = B[14] & A[13];
-    assign b13[15] = B[15] & A[13];
+	assign b13[1] = B[1] & A[13];
+	assign b13[2] = B[2] & A[13];
+	assign b13[3] = B[3] & A[13];
+	assign b13[4] = B[4] & A[13];
+	assign b13[5] = B[5] & A[13];
+	assign b13[6] = B[6] & A[13];
+	assign b13[7] = B[7] & A[13];
+	assign b13[8] = B[8] & A[13];
+	assign b13[9] = B[9] & A[13];
+	assign b13[10] = B[10] & A[13];
+	assign b13[11] = B[11] & A[13];
+	assign b13[12] = B[12] & A[13];
+	assign b13[13] = B[13] & A[13];
+	assign b13[14] = B[14] & A[13];
+	assign b13[15] = B[15] & A[13];
 
 	// Assign the sum of w11 and b13 to s12.
 	// c12 holds the carry.
@@ -779,21 +779,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[14] to b14.
 	assign b14[0] = B[0] & A[14];
-    assign b14[1] = B[1] & A[14];
-    assign b14[2] = B[2] & A[14];
-    assign b14[3] = B[3] & A[14];
-    assign b14[4] = B[4] & A[14];
-    assign b14[5] = B[5] & A[14];
-    assign b14[6] = B[6] & A[14];
-    assign b14[7] = B[7] & A[14];
-    assign b14[8] = B[8] & A[14];
-    assign b14[9] = B[9] & A[14];
-    assign b14[10] = B[10] & A[14];
-    assign b14[11] = B[11] & A[14];
-    assign b14[12] = B[12] & A[14];
-    assign b14[13] = B[13] & A[14];
-    assign b14[14] = B[14] & A[14];
-    assign b14[15] = B[15] & A[14];
+	assign b14[1] = B[1] & A[14];
+	assign b14[2] = B[2] & A[14];
+	assign b14[3] = B[3] & A[14];
+	assign b14[4] = B[4] & A[14];
+	assign b14[5] = B[5] & A[14];
+	assign b14[6] = B[6] & A[14];
+	assign b14[7] = B[7] & A[14];
+	assign b14[8] = B[8] & A[14];
+	assign b14[9] = B[9] & A[14];
+	assign b14[10] = B[10] & A[14];
+	assign b14[11] = B[11] & A[14];
+	assign b14[12] = B[12] & A[14];
+	assign b14[13] = B[13] & A[14];
+	assign b14[14] = B[14] & A[14];
+	assign b14[15] = B[15] & A[14];
 
 	// Assign the sum of w12 and b14 to s13.
 	// c13 holds the carry.
@@ -825,21 +825,21 @@ module MULTIPLIER(A, B, P);
 	
 	// Assign AND of inputB and inputA[15] to b15.
 	assign b15[0] = B[0] & A[15];
-    assign b15[1] = B[1] & A[15];
-    assign b15[2] = B[2] & A[15];
-    assign b15[3] = B[3] & A[15];
-    assign b15[4] = B[4] & A[15];
-    assign b15[5] = B[5] & A[15];
-    assign b15[6] = B[6] & A[15];
-    assign b15[7] = B[7] & A[15];
-    assign b15[8] = B[8] & A[15];
-    assign b15[9] = B[9] & A[15];
-    assign b15[10] = B[10] & A[15];
-    assign b15[11] = B[11] & A[15];
-    assign b15[12] = B[12] & A[15];
-    assign b15[13] = B[13] & A[15];
-    assign b15[14] = B[14] & A[15];
-    assign b15[15] = B[15] & A[15];
+	assign b15[1] = B[1] & A[15];
+	assign b15[2] = B[2] & A[15];
+	assign b15[3] = B[3] & A[15];
+	assign b15[4] = B[4] & A[15];
+	assign b15[5] = B[5] & A[15];
+	assign b15[6] = B[6] & A[15];
+	assign b15[7] = B[7] & A[15];
+	assign b15[8] = B[8] & A[15];
+	assign b15[9] = B[9] & A[15];
+	assign b15[10] = B[10] & A[15];
+	assign b15[11] = B[11] & A[15];
+	assign b15[12] = B[12] & A[15];
+	assign b15[13] = B[13] & A[15];
+	assign b15[14] = B[14] & A[15];
+	assign b15[15] = B[15] & A[15];
 
 	// Assign the sum of w13 and b15 to s14.
 	// c14 holds the carry.
@@ -946,22 +946,21 @@ module MUX(channels,select,b);
 	output      [31:0] b;
 
 	assign b = ({32{select[15]}} & channels[15]) | 
-               ({32{select[14]}} & channels[14]) |
-			   ({32{select[13]}} & channels[13]) |
-			   ({32{select[12]}} & channels[12]) |
-			   ({32{select[11]}} & channels[11]) |
-			   ({32{select[10]}} & channels[10]) |
-			   ({32{select[ 9]}} & channels[ 9]) |
-			   ({32{select[ 8]}} & channels[ 8]) |
-			   ({32{select[ 7]}} & channels[ 7]) |
-			   ({32{select[ 6]}} & channels[ 6]) |
-			   ({32{select[ 5]}} & channels[ 5]) |
-			   ({32{select[ 4]}} & channels[ 4]) |
-			   ({32{select[ 3]}} & channels[ 3]) |
-			   ({32{select[ 2]}} & channels[ 2]) | 
-               ({32{select[ 1]}} & channels[ 1]) |
-               ({32{select[ 0]}} & channels[ 0]) ;
-	
+		({32{select[14]}} & channels[14]) |
+		({32{select[13]}} & channels[13]) |
+		({32{select[12]}} & channels[12]) |
+		({32{select[11]}} & channels[11]) |
+		({32{select[10]}} & channels[10]) |
+		({32{select[ 9]}} & channels[ 9]) |
+		({32{select[ 8]}} & channels[ 8]) |
+		({32{select[ 7]}} & channels[ 7]) |
+		({32{select[ 6]}} & channels[ 6]) |
+		({32{select[ 5]}} & channels[ 5]) |
+		({32{select[ 4]}} & channels[ 4]) |
+		({32{select[ 3]}} & channels[ 3]) |
+		({32{select[ 2]}} & channels[ 2]) | 
+		({32{select[ 1]}} & channels[ 1]) |
+		({32{select[ 0]}} & channels[ 0]) ;
 endmodule
 
 
